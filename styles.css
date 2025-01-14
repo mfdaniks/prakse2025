@@ -1,0 +1,17 @@
+body {
+    padding-top: 56px;
+}
+
+.hero {
+    background-image: url('https://picsum.photos/id/238/1200/400');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.card {
+    margin: 20px 0;
+}
