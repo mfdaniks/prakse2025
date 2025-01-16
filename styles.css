@@ -15,3 +15,12 @@ body {
 .card {
     margin: 20px 0;
 }
+
+.container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
