@@ -16,11 +16,11 @@ body {
     margin: 20px 0;
 }
 
-.container {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 section {
     margin-bottom: 20px;
+}
+
+.btn-primary: hover {
+    background-color: #0056b3;
+    border-color: #004085;
 }
