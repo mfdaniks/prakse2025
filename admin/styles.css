@@ -1,0 +1,12 @@
+body {
+    background-color: #1d2630 !important;
+}
+
+.container {
+    margin-top: 150px;
+}
+
+input {
+    max-width: 300px;
+    min-width: 300px;
+}
