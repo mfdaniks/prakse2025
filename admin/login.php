@@ -23,9 +23,8 @@ if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
 
     if ($password === $user['password']) {
-        echo "Esi pieslēdzies";
     } else {
-        header("Location: index.php");
+        header("Location: config.php");
         exit();
     }
 } else {
