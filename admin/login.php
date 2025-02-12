@@ -6,35 +6,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    if (empty($username) || empty($password)) {
-        header("Location: login.php?error=emptyfields");
-        exit();
-    }
-
     $query = "SELECT * FROM users WHERE username = ? LIMIT 1";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
-
+    
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
-
+        
         if (password_verify($password, $user['password'])) {
             $_SESSION['user'] = $user['username'];
             header("Location: index.php");
             exit();
         } else {
-            header("Location: login.php?error=wrongpassword");
-            exit();
+            echo "Parole nav pareiza!";
         }
     } else {
-        header("Location: login.php?error=nouser");
-        exit();
+        echo "Lietotājs netika atrasts!";
     }
-}
 
+    $stmt->close();
+    $conn->close();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="lv">
 <head>
